@@ -1,0 +1,65 @@
+/* Applying a pixelated background using CSS */
+body {
+  background: linear-gradient(45deg, #00ccff 25%, #0066ff 25%, #0066ff 50%, #00ccff 50%, #00ccff 75%, #0066ff 75%, #0066ff);
+  background-size: 40px 40px;
+  /* Creating pixelated blocks */
+  color: #fff;
+  /* White text color for contrast */
+  font-family: 'Press Start 2P', cursive;
+  /* Retro 8-bit style font */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /* Ensure background covers the whole screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container styling with retro blocky elements */
+.container {
+  padding: 30px;
+  border: 6px solid #fff;
+  /* Thick white border to simulate 8-bit style */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Semi-transparent black background */
+  box-shadow: 8px 8px 0 #00ccff, 16px 16px 0 #0066ff;
+  /* Retro blocky shadow */
+  text-align: center;
+  width: 350px;
+  /* Adjust width for center alignment */
+}
+
+/* Styling for the timer text */
+.timer {
+  font-size: 3em;
+  /* Larger size for timer display */
+  margin: 20px 0;
+}
+
+/* Button styling */
+.controls button {
+  background-color: #00ccff;
+  /* Light blue button */
+  color: #fff;
+  /* White text */
+  border: 4px solid #fff;
+  /* Thick white border */
+  box-shadow: 4px 4px 0 #0066ff;
+  /* Blocky shadow */
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px;
+  text-transform: uppercase;
+  /* Make the button text uppercase */
+  font-family: 'Press Start 2P', cursive;
+  /* Retro font for buttons too */
+}
+
+/* Button active state to simulate "press" effect */
+.controls button:active {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+  /* Slight move to simulate pressing */
+}
