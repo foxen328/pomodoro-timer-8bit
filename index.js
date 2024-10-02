@@ -1,7 +1,7 @@
 // Timer variables
-let minutes = 25;
-let seconds = 0;
-let timerInterval;
+let minutes = 25; // Default minutes
+let seconds = 0;  // Default seconds
+let timerInterval; // Timer interval reference
 
 // Update title with the remaining time
 function updateTitle() {
@@ -17,14 +17,16 @@ function updateDisplay() {
 
 // Start the timer
 document.getElementById('start').addEventListener('click', () => {
-  const clickSound = document.getElementById('click-sound');
-  clickSound.play();
+  // Removed click sound reference
 
   if (!timerInterval) {
     timerInterval = setInterval(() => {
       if (seconds === 0) {
         if (minutes === 0) {
           clearInterval(timerInterval);
+          timerInterval = null; // Reset the timer interval
+          const music = document.getElementById('bg-music');
+          music.play(); // Play music when the timer finishes
           alert("Time's up!"); // Alert when the timer finishes
         } else {
           minutes--;
@@ -41,13 +43,13 @@ document.getElementById('start').addEventListener('click', () => {
 // Pause the timer
 document.getElementById('pause').addEventListener('click', () => {
   clearInterval(timerInterval);
-  timerInterval = null;
+  timerInterval = null; // Reset the timer interval
 });
 
 // Reset the timer
 document.getElementById('reset').addEventListener('click', () => {
   clearInterval(timerInterval);
-  timerInterval = null;
+  timerInterval = null; // Reset the timer interval
   minutes = 25;
   seconds = 0;
   updateDisplay();
@@ -68,3 +70,6 @@ document.getElementById('toggle-dark-mode').addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   document.querySelector('.container').classList.toggle('dark-mode');
 });
+
+// Initialize the display
+updateDisplay();
