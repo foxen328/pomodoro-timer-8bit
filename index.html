@@ -6,14 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro Timer</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.svg">
-
-  <!-- Link to Google Fonts for retro 8-bit style -->
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-  <!-- Link to the CSS file -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
 </head>
 
 <body>
@@ -23,29 +18,21 @@
       <span id="minutes">25</span>:<span id="seconds">00</span>
     </div>
 
-    <!-- Progress bar -->
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
-    </div>
-
     <div class="controls">
       <button id="start">Start</button>
       <button id="pause">Pause</button>
       <button id="reset">Reset</button>
+      <button id="music-toggle">Toggle Music</button>
+      <button id="toggle-dark-mode">Toggle Dark Mode</button> <!-- Dark mode toggle button -->
     </div>
-
-    <!-- Toggle Dark Mode -->
-    <button id="toggle-dark-mode">Toggle Dark Mode</button>
-
-    <!-- Toggle Music -->
-    <button id="music-toggle">Toggle Music</button>
   </div>
 
-  <!-- Background music only -->
-  <audio id="bg-music" src="music.mp3" loop preload="auto" hidden></audio>
-  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+  <audio id="bg-music" loop preload="auto" hidden>
+    <source src="music.mp3" type="audio/mpeg">
+    <source src="music.ogg" type="audio/ogg"> <!-- Optional: Add OGG for compatibility -->
+    Your browser does not support the audio element.
+  </audio>
 
-  <!-- Music Credit Section -->
   <footer>
     <p>
       Song: <strong>Egzod, Maestro Chives, Neoni - Royalty [NCS Release]</strong><br>
@@ -55,8 +42,7 @@
     </p>
   </footer>
 
-  <!-- Link to the JS file -->
-  <script src="index.js"></script>
+  <script src="index.js"></script> <!-- Link to your external JavaScript file -->
 </body>
 
 </html>

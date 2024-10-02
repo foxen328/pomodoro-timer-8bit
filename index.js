@@ -13,7 +13,6 @@ function updateDisplay() {
   document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
   document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
   updateTitle(); // Update the title with the remaining time
-  updateProgress(); // Update the progress bar
 }
 
 // Start the timer
@@ -26,7 +25,7 @@ document.getElementById('start').addEventListener('click', () => {
       if (seconds === 0) {
         if (minutes === 0) {
           clearInterval(timerInterval);
-          // Removed buzzer sound here
+          alert("Time's up!"); // Alert when the timer finishes
         } else {
           minutes--;
           seconds = 59;
@@ -41,32 +40,17 @@ document.getElementById('start').addEventListener('click', () => {
 
 // Pause the timer
 document.getElementById('pause').addEventListener('click', () => {
-  document.getElementById('click-sound').play();
   clearInterval(timerInterval);
   timerInterval = null;
 });
 
 // Reset the timer
 document.getElementById('reset').addEventListener('click', () => {
-  document.getElementById('click-sound').play();
   clearInterval(timerInterval);
   timerInterval = null;
   minutes = 25;
   seconds = 0;
   updateDisplay();
-});
-
-// Update the progress bar based on time left
-function updateProgress() {
-  const totalSeconds = 25 * 60; // 25 minutes total in seconds
-  const elapsedSeconds = (25 - minutes) * 60 + (60 - seconds);
-  const progressPercentage = (elapsedSeconds / totalSeconds) * 100;
-  document.querySelector('.progress-fill').style.width = progressPercentage + '%';
-}
-
-// Dark mode toggle
-document.getElementById('toggle-dark-mode').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
 });
 
 // Music toggle
@@ -77,4 +61,10 @@ document.getElementById('music-toggle').addEventListener('click', () => {
   } else {
     music.pause();
   }
+});
+
+// Dark mode toggle
+document.getElementById('toggle-dark-mode').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  document.querySelector('.container').classList.toggle('dark-mode');
 });

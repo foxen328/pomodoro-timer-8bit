@@ -1,95 +1,108 @@
-/* Applying a pixelated background using CSS */
 body {
-  background: linear-gradient(45deg, #00ccff 25%, #0066ff 25%, #0066ff 50%, #00ccff 50%, #00ccff 75%, #0066ff 75%, #0066ff);
-  background-size: 40px 40px;
-  /* Creating pixelated blocks */
-  color: #fff;
-  /* White text color for contrast */
   font-family: 'Press Start 2P', cursive;
-  /* Retro 8-bit style font */
   margin: 0;
-  padding: 0;
-  height: 100vh;
-  /* Ensure background covers the whole screen */
+  background-image: url('https://img.goodfon.com/original/1920x1080/2/c2/8bit-vremya-sutki-utro-more.jpg');
+  /* Your uploaded image path */
+  background-size: cover;
+  /* Ensure the background covers the entire area */
+  color: #ffffff;
+  /* Default text color */
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: url('cursor.png'), auto;
-  /* Custom 8-bit style cursor */
-}
-
-/* Dark mode styling */
-body.dark-mode {
-  background: black;
-  color: white;
-}
-
-/* Container styling with retro blocky elements */
-.container {
-  padding: 30px;
-  border: 6px solid #fff;
-  /* Thick white border to simulate 8-bit style */
-  background-color: rgba(0, 0, 0, 0.8);
-  /* Semi-transparent black background */
-  box-shadow: 8px 8px 0 #00ccff, 16px 16px 0 #0066ff;
-  /* Retro blocky shadow */
+  height: 100vh;
+  /* Full height for better alignment */
   text-align: center;
-  width: 350px;
-  /* Adjust width for center alignment */
+  transition: background-color 0.3s, color 0.3s;
+  /* Smooth transitions */
 }
 
-/* Styling for the timer text */
+.container {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  /* Dark semi-transparent background */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  /* Full width with some margin */
+  max-width: 400px;
+  /* Maximum width for larger screens */
+}
+
 .timer {
-  font-size: 3em;
-  /* Larger size for timer display */
-  margin: 20px 0;
+  font-size: 48px;
+  /* Bigger font size for better visibility */
 }
 
-/* Progress bar styling */
-.progress-bar {
-  width: 100%;
-  height: 20px;
-  background-color: #333;
-  border: 2px solid #fff;
-  margin: 20px 0;
+.controls {
+  display: flex;
+  flex-direction: column;
+  /* Stack buttons vertically */
+  align-items: center;
+  /* Center buttons */
 }
 
-.progress-fill {
-  height: 100%;
-  background-color: #00ccff;
-  width: 0;
-  /* This will be dynamically updated */
-}
-
-/* Button styling */
 .controls button {
-  background-color: #00ccff;
-  /* Light blue button */
-  color: #fff;
-  /* White text */
-  border: 4px solid #fff;
-  /* Thick white border */
-  box-shadow: 4px 4px 0 #0066ff;
-  /* Blocky shadow */
-  font-size: 16px;
-  padding: 10px 20px;
-  cursor: pointer;
   margin: 10px;
-  text-transform: uppercase;
-  /* Make the button text uppercase */
-  font-family: 'Press Start 2P', cursive;
-  /* Retro font for buttons too */
-}
-
-/* Button active state to simulate "press" effect */
-.controls button:active {
-  box-shadow: none;
-  transform: translate(4px, 4px);
-  /* Slight move to simulate pressing */
-}
-
-/* Dark mode button styling */
-button.dark-mode {
-  background-color: #333;
+  /* Spacing between buttons */
+  padding: 15px 25px;
+  /* Larger touch area */
+  font-size: 20px;
+  /* Bigger text for readability */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #6200ea;
+  /* Primary color */
   color: white;
+  transition: background-color 0.3s;
+}
+
+.controls button:hover {
+  background-color: #3700b3;
+  /* Darker shade on hover */
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 14px;
+  /* Smaller text for footer */
+  color: #ffffff;
+  /* Default footer text color */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #212121;
+  /* Dark background for dark mode */
+  background-image: none;
+  /* Remove the background image in dark mode */
+  color: #ffffff;
+  /* Light text for dark mode */
+}
+
+.container.dark-mode {
+  background: rgba(255, 255, 255, 0.1);
+  /* Light background for container in dark mode */
+}
+
+/* Footer text visibility in dark mode */
+footer.dark-mode {
+  color: #ffffff;
+  /* Light text for footer in dark mode */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .timer {
+    font-size: 36px;
+    /* Smaller font for smaller screens */
+  }
+
+  .controls button {
+    font-size: 16px;
+    /* Adjust button text size */
+    padding: 10px 20px;
+    /* Adjust padding for smaller screens */
+  }
 }
