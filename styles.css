@@ -5,6 +5,8 @@ body {
   /* Your uploaded image path */
   background-size: cover;
   /* Ensure the background covers the entire area */
+  background-position: center;
+  /* Center the background image */
   color: #ffffff;
   /* Default text color */
   display: flex;
@@ -104,5 +106,10 @@ footer.dark-mode {
     /* Adjust button text size */
     padding: 10px 20px;
     /* Adjust padding for smaller screens */
+  }
+
+  footer {
+    font-size: 12px;
+    /* Smaller footer text for mobile */
   }
 }
