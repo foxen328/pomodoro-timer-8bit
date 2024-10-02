@@ -1,50 +1,32 @@
-// Variables to track time
+// Timer variables
 let minutes = 25;
 let seconds = 0;
 let timerInterval;
-let isRunning = false;
 
-// Function to update the timer display
+// Update title with the remaining time
+function updateTitle() {
+  document.title = `Pomodoro - ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+// Update the timer display and the title
 function updateDisplay() {
   document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
   document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  updateTitle(); // Update the title with the remaining time
+  updateProgress(); // Update the progress bar
 }
 
-// Request permission for browser notifications
-if (Notification.permission !== "granted") {
-  Notification.requestPermission();
-}
+// Start the timer
+document.getElementById('start').addEventListener('click', () => {
+  const clickSound = document.getElementById('click-sound');
+  clickSound.play();
 
-// Function to notify the user with a browser notification
-function notifyUser() {
-  if (Notification.permission === "granted") {
-    new Notification("Pomodoro Timer", {
-      body: "Time's up! Take a break.",
-      icon: 'https://example.com/timer-icon.png'  // You can replace this with an actual icon URL
-    });
-  }
-}
-
-// Function to play sound when the timer finishes
-function playSound() {
-  const sound = document.getElementById('alarm-sound');
-  sound.play();
-}
-
-// Function to start the timer
-function startTimer() {
-  if (!isRunning) {
-    isRunning = true;
-    timerInterval = setInterval(function () {
+  if (!timerInterval) {
+    timerInterval = setInterval(() => {
       if (seconds === 0) {
         if (minutes === 0) {
           clearInterval(timerInterval);
-          isRunning = false;
-
-          // Timer finished: notify the user and play sound
-          alert("Time's up!");
-          notifyUser();
-          playSound();
+          // Removed buzzer sound here
         } else {
           minutes--;
           seconds = 59;
@@ -53,29 +35,46 @@ function startTimer() {
         seconds--;
       }
       updateDisplay();
-    }, 1000); // The interval is set to 1000 milliseconds (1 second)
+    }, 1000);
   }
-}
+});
 
-// Function to pause the timer
-function pauseTimer() {
+// Pause the timer
+document.getElementById('pause').addEventListener('click', () => {
+  document.getElementById('click-sound').play();
   clearInterval(timerInterval);
-  isRunning = false;
-}
+  timerInterval = null;
+});
 
-// Function to reset the timer
-function resetTimer() {
+// Reset the timer
+document.getElementById('reset').addEventListener('click', () => {
+  document.getElementById('click-sound').play();
   clearInterval(timerInterval);
-  isRunning = false;
+  timerInterval = null;
   minutes = 25;
   seconds = 0;
   updateDisplay();
+});
+
+// Update the progress bar based on time left
+function updateProgress() {
+  const totalSeconds = 25 * 60; // 25 minutes total in seconds
+  const elapsedSeconds = (25 - minutes) * 60 + (60 - seconds);
+  const progressPercentage = (elapsedSeconds / totalSeconds) * 100;
+  document.querySelector('.progress-fill').style.width = progressPercentage + '%';
 }
 
-// Add event listeners to buttons
-document.getElementById('start').addEventListener('click', startTimer);
-document.getElementById('pause').addEventListener('click', pauseTimer);
-document.getElementById('reset').addEventListener('click', resetTimer);
+// Dark mode toggle
+document.getElementById('toggle-dark-mode').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
 
-// Initial display update
-updateDisplay();
+// Music toggle
+document.getElementById('music-toggle').addEventListener('click', () => {
+  const music = document.getElementById('bg-music');
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+});

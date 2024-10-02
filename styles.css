@@ -14,6 +14,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: url('cursor.png'), auto;
+  /* Custom 8-bit style cursor */
+}
+
+/* Dark mode styling */
+body.dark-mode {
+  background: black;
+  color: white;
 }
 
 /* Container styling with retro blocky elements */
@@ -35,6 +43,22 @@ body {
   font-size: 3em;
   /* Larger size for timer display */
   margin: 20px 0;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #333;
+  border: 2px solid #fff;
+  margin: 20px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #00ccff;
+  width: 0;
+  /* This will be dynamically updated */
 }
 
 /* Button styling */
@@ -62,4 +86,10 @@ body {
   box-shadow: none;
   transform: translate(4px, 4px);
   /* Slight move to simulate pressing */
+}
+
+/* Dark mode button styling */
+button.dark-mode {
+  background-color: #333;
+  color: white;
 }

@@ -5,8 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pomodoro Timer</title>
-  <!-- Link to the Google Fonts 'Press Start 2P' -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.svg">
+
+  <!-- Link to Google Fonts for retro 8-bit style -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
   <!-- Link to the CSS file -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,15 +23,37 @@
       <span id="minutes">25</span>:<span id="seconds">00</span>
     </div>
 
+    <!-- Progress bar -->
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+
     <div class="controls">
       <button id="start">Start</button>
       <button id="pause">Pause</button>
       <button id="reset">Reset</button>
     </div>
+
+    <!-- Toggle Dark Mode -->
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
+
+    <!-- Toggle Music -->
+    <button id="music-toggle">Toggle Music</button>
   </div>
 
-  <!-- Audio element for the notification sound -->
-  <audio id="alarm-sound" src="alarm.mp3" preload="auto"></audio>
+  <!-- Background music only -->
+  <audio id="bg-music" src="music.mp3" loop preload="auto" hidden></audio>
+  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+
+  <!-- Music Credit Section -->
+  <footer>
+    <p>
+      Song: <strong>Egzod, Maestro Chives, Neoni - Royalty [NCS Release]</strong><br>
+      Music provided by <a href="http://ncs.io/Royalty" target="_blank">NoCopyrightSounds</a><br>
+      Free Download/Stream: <a href="http://ncs.io/Royalty" target="_blank">http://ncs.io/Royalty</a><br>
+      Watch: <a href="http://ncs.lnk.to/RoyaltyAT/youtube" target="_blank">http://ncs.lnk.to/RoyaltyAT/youtube</a>
+    </p>
+  </footer>
 
   <!-- Link to the JS file -->
   <script src="index.js"></script>
