@@ -4,44 +4,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pomodoro Timer</title>
+  <title>Christopher Fox - Tech Blog & CV</title>
 
   <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div class="container">
-    <h1>Pomodoro Timer</h1>
-    <div class="timer">
-      <span id="minutes">25</span>:<span id="seconds">00</span>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h1 class="logo">Christopher Fox</h1>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#blog" class="nav-link">Tech Reviews</a></li>
+        <li><a href="#cv" class="nav-link">CV</a></li>
+        <li><button id="toggle-dark-mode" class="theme-toggle">🌙</button></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="controls">
-      <button id="start">Start</button>
-      <button id="pause">Pause</button>
-      <button id="reset">Reset</button>
-      <button id="music-toggle">Toggle Music</button>
-      <button id="toggle-dark-mode">Toggle Dark Mode</button> <!-- Dark mode toggle button -->
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to My Tech Blog</h1>
+      <p class="hero-subtitle">Exploring the latest in technology, gadgets, and software</p>
     </div>
-  </div>
+  </section>
 
-  <audio id="bg-music" loop preload="auto" hidden>
-    <source src="music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <!-- Blog Section -->
+  <section id="blog" class="blog-section">
+    <div class="container">
+      <h2 class="section-title">Latest Tech Reviews</h2>
+      <div class="blog-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="hardware">Hardware</button>
+        <button class="filter-btn" data-filter="software">Software</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+      </div>
+      <div id="blog-posts" class="blog-grid">
+        <!-- Blog posts will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    <p>
-      Song: <strong>Egzod, Maestro Chives, Neoni - Royalty [NCS Release]</strong><br>
-      Music provided by <a href="http://ncs.io/Royalty" target="noreferrer">NoCopyrightSounds</a><br>
-      Free Download/Stream: <a href="http://ncs.io/Royalty" target="noreferrer">http://ncs.io/Royalty</a><br>
-      Watch: <a href="http://ncs.lnk.to/RoyaltyAT/youtube" target="noreferrer">http://ncs.lnk.to/RoyaltyAT/youtube</a>
-    </p>
+  <!-- CV Section -->
+  <section id="cv" class="cv-section">
+    <div class="container">
+      <h2 class="section-title">Curriculum Vitae</h2>
+
+      <div class="cv-content">
+        <div class="cv-section-block">
+          <h3>Professional Summary</h3>
+          <p>Passionate technology enthusiast with expertise in software development and tech evaluation. Dedicated to
+            staying current with emerging technologies and sharing insights through detailed reviews.</p>
+        </div>
+
+        <div class="cv-section-block">
+          <h3>Experience</h3>
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <h4>Your Job Title</h4>
+              <span class="cv-date">2020 - Present</span>
+            </div>
+            <p class="cv-company">Company Name</p>
+            <ul>
+              <li>Key responsibility or achievement</li>
+              <li>Another important contribution</li>
+              <li>Notable project or outcome</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <h4>Previous Position</h4>
+              <span class="cv-date">2018 - 2020</span>
+            </div>
+            <p class="cv-company">Previous Company</p>
+            <ul>
+              <li>Key responsibility or achievement</li>
+              <li>Another important contribution</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section-block">
+          <h3>Education</h3>
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <h4>Degree Name</h4>
+              <span class="cv-date">Year</span>
+            </div>
+            <p class="cv-company">University Name</p>
+          </div>
+        </div>
+
+        <div class="cv-section-block">
+          <h3>Skills</h3>
+          <div class="skills-grid">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Technical Writing</span>
+            <span class="skill-tag">Product Reviews</span>
+          </div>
+        </div>
+
+        <div class="cv-section-block">
+          <h3>Contact</h3>
+          <div class="contact-info">
+            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p>GitHub: <a href="https://github.com/foxen328" target="_blank">github.com/foxen328</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Christopher Fox. All rights reserved.</p>
+    </div>
   </footer>
 
-  <script src="index.js"></script> <!-- Link to your external JavaScript file -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
+
+<!-- marked.js (Markdown parser) is loaded before our script when available -->

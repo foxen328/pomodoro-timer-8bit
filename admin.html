@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin - Create Post</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container container">
+      <h1 class="logo">Admin</h1>
+      <div style="margin-left:auto; display:flex; gap:1rem; align-items:center;">
+        <a href="/" class="nav-link">Site</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding:2rem 0;">
+    <h2 class="section-title">Create New Post</h2>
+
+    <div class="cv-content">
+      <div class="cv-section-block">
+        <label for="token"><strong>GitHub Token</strong> (store in session only)</label>
+        <input id="token" style="width:100%; padding:0.5rem; margin-top:0.5rem;"
+          placeholder="Paste a GitHub Personal Access Token with repo scope" />
+        <div style="margin-top:0.5rem; font-size:0.9rem; opacity:0.9;">Token is stored in this browser session only
+          (sessionStorage). Create a token at <a href="https://github.com/settings/tokens"
+            target="_blank">github.com/settings/tokens</a> with <code>repo</code> scope.</div>
+      </div>
+
+      <div class="cv-section-block">
+        <label for="title"><strong>Title</strong></label>
+        <input id="title" style="width:100%; padding:0.5rem; margin-top:0.5rem;" />
+
+        <label for="category" style="margin-top:1rem; display:block;">Category</label>
+        <input id="category" style="width:100%; padding:0.5rem; margin-top:0.5rem;"
+          placeholder="hardware | software | mobile" />
+
+        <label for="excerpt" style="margin-top:1rem; display:block;">Excerpt</label>
+        <input id="excerpt" style="width:100%; padding:0.5rem; margin-top:0.5rem;" />
+
+        <label for="content" style="margin-top:1rem; display:block;">Markdown Content</label>
+        <textarea id="content" rows="12"
+          style="width:100%; padding:0.5rem; margin-top:0.5rem; font-family:inherit;">Write your post in Markdown here...</textarea>
+
+        <div style="display:flex; gap:1rem; margin-top:1rem;">
+          <button id="publish" class="filter-btn">Publish to GitHub</button>
+          <button id="preview" class="filter-btn">Preview</button>
+        </div>
+
+        <div id="status" style="margin-top:1rem; font-weight:600;"></div>
+      </div>
+
+      <div id="previewArea" class="cv-section-block" style="display:none;">
+        <h3>Preview</h3>
+        <div id="previewContent"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Christopher Fox</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="admin.js"></script>
+</body>
+
+</html>

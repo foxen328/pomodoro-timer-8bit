@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "file": "1-macbook-m3.md",
+      "title": "MacBook Pro M3 Review: A Developer's Perspective",
+      "category": "hardware",
+      "excerpt": "An in-depth look at Apple's latest MacBook Pro and how it performs for software development and creative work.",
+      "date": "2025-11-15",
+      "readTime": "8 min read"
+    },
+    {
+      "id": 2,
+      "file": "2-vscode-extensions.md",
+      "title": "VS Code Extensions That Boosted My Productivity",
+      "category": "software",
+      "excerpt": "Discover the top VS Code extensions that have transformed my coding workflow and increased efficiency.",
+      "date": "2025-11-10",
+      "readTime": "6 min read"
+    },
+    {
+      "id": 3,
+      "file": "3-iphone-15-pro.md",
+      "title": "iPhone 15 Pro: Is the Upgrade Worth It?",
+      "category": "mobile",
+      "excerpt": "A comprehensive review of the iPhone 15 Pro, covering performance, camera improvements, and new features.",
+      "date": "2025-11-05",
+      "readTime": "10 min read"
+    }
+  ]
+}
